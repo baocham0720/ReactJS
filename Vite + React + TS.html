@@ -1,0 +1,1609 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:5173/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="module">import { injectIntoGlobalHook } from "/@react-refresh";
+injectIntoGlobalHook(window);
+window.$RefreshReg$ = () => {};
+window.$RefreshSig$ = () => (type) => type;</script>
+
+    <script type="module" src="./Vite + React + TS_files/client"></script>
+
+    
+    <link rel="icon" type="image/svg+xml" href="http://localhost:5173/vite.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vite + React + TS</title>
+  <style type="text/css" data-vite-dev-id="/Users/user/bao tram/MovieApp/vite-project/src/App.css">@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    scroll-padding-top: 2rem;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+/* Some Variables */
+
+:root {
+    --main-color: #ffb43a;
+    --hover-color: hsl(37, 94%, 57%);
+    --body-color: #1e1e2a;
+    --container-color: #2d2e37;
+    --text-color: #fcfeff;
+}
+
+/* Custom Scrolll Bar */
+
+html::-webkit-scrollbar {
+    width: 0.5rem;
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: var(--main-color);
+}
+
+/* Selection Color */
+
+::selection {
+    background: var(--main-color);
+    color: var(--text-color);
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+section {
+    padding: 3rem 0 0rem;
+}
+
+img {
+    width: 100%;
+}
+
+.bx {
+    cursor: pointer;
+}
+
+body {
+    background: var(--body-color);
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 1060px;
+    margin: auto;
+    width: 100%;
+}
+
+.popular {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--body-color);
+    z-index: 100;
+}
+
+/* Nav */
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+/* Logo */
+
+.logo {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0 auto 0 0;
+}
+
+.logo span {
+    color: var(--main-color);
+}
+
+/* Search Box */
+
+.search-box {
+    max-width: 240px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    column-gap: 0.7rem;
+    padding: 8px 15px;
+    background: var(--container-color);
+    border-radius: 4rem;
+    margin-right: 1rem;
+}
+
+.search-box .bx {
+    font-size: 1.1rem;
+}
+
+.search-box .bx:hover {
+    color: var(--main-color);
+}
+
+#search-input {
+    width: 100%;
+    border: none;
+    outline: none;
+    color: var(--text-color);
+    background: transparent;
+    font-size: 0.938rem;
+}
+
+.SwiperSlide:hover{
+    color: var(--main-color);
+}
+
+/* User */
+
+.user {
+    display: flex;
+}
+
+.user-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.navbar {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.1rem;
+}
+
+.nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #b7b7b7;
+}
+
+.nav-link:hover,
+.nav-active {
+    color: var(--text-color);
+    transition: 0.3s all linear;
+    transform: scale(1.1);
+}
+
+.nav-link .bx {
+    font-size: 1.1rem;
+}
+
+.nav-link-tittle {
+    font-size: 0.7rem;
+}
+
+/* Home */
+
+.home {
+    position: relative;
+    min-height: 470px;
+    display: flex;
+    align-items: center;
+    margin-top: 5rem !important;
+    border-radius: 0.5rem;
+}
+
+.home-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.home-text {
+    padding-left: 40px;
+}
+
+.home-tittle {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.home-text p {
+    font-size: 0.938rem;
+    margin: 10px 0 20px;
+    color: var(--main-color);
+}
+
+.watch-btn {
+    display: flex;
+    align-items: center;
+    column-gap: 0.8rem;
+    color: var(--text-color);
+}
+
+.watch-btn .bx {
+    font-size: 21px;
+    background: var(--main-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.watch-btn .bx:hover {
+    background: var(--hover-color);
+}
+
+.watch-btn span {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+/* Heading */
+
+.heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--container-color);
+    padding: 8px 14px;
+    border: 1px solid hsl(200 100% 99% / 5%);
+    width: 1060px;
+    height: 47px;
+    margin: auto;
+    margin-bottom: 2rem;
+}
+
+.heading-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+/* Movie Box */
+
+.movie-box {
+    position: relative;
+    width: 100%;
+    height: 380px;
+    overflow: hidden;
+}
+
+.movie-box-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.movie-box .box-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 14px;
+    background: linear-gradient(8deg,
+            hsl(240 17% 14% / 74%) 14%,
+            hsl(240 17% 14% / 14%) 44%);
+    overflow: hidden;
+}
+
+.movie-title {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.movie-type {
+    font-size: 0.938rem;
+}
+
+.play-btn {
+    position: absolute;
+    bottom: 0.8rem;
+    right: 0.8rem;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    transition: 0.3s all linear;
+    scale: 1.2;
+}
+
+.movies-content {
+    position: relative;
+    width: 100%;
+    height: 380px;
+    overflow: hidden;
+}
+
+.movies-content-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.movies-container {
+    max-width: 1060px;
+    margin: auto;
+    width: 100%;
+}
+
+.movie-box:hover,
+.movie-box-img {
+    transform: scale(1.05);
+    transition: 0.5s all linear;
+}
+
+.btn-np {
+    position: static !important;
+
+}
+
+.next-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2.5rem;
+}
+
+.next-btn {
+    background: var(--main-color);
+    padding: 12px 20px;
+    color: var(--text-color);
+    font-weight: 500;
+    border-radius: 3px;
+}
+
+.next-btn:hover {
+    background: var(--hover-color);
+    scale: 1.1;
+}
+
+/* Copyright */
+
+.copyright {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Play Container */
+
+.play-container {
+    position: relative;
+    min-height: 540px;
+    margin-top: 5rem !important;
+    background: linear-gradient(8deg,
+            hsl(240 17% 14% / 74%) 14%,
+            hsl(240 17% 14% / 14%) 44%);
+}
+
+.play-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: -1;
+}
+
+.play-text {
+    position: absolute;
+    bottom: -32%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+}
+
+.play-text h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    column-gap: 2px;
+    font-size: 1.1rem;
+    color: var(--main-color);
+    margin-top: 4px;
+}
+
+.tags {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    margin: 1rem 0;
+}
+
+.tags span {
+    background: var(--container-color);
+    padding: 0 4px;
+}
+
+.play-movie {
+    position: absolute;
+    bottom: 19.8px;
+    left: 42px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--main-color);
+    font-size: 24px;
+    animation: animate 2s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        box-shadow: 0 0 0 rgb(255, 180, 50, 0.7);
+    }
+
+    40% {
+        box-shadow: 0 0 0 50px rgb(255, 193, 7, 0);
+    }
+
+    80% {
+        box-shadow: 0 0 0 50px rgb(255, 193, 7, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 rgb(255, 193, 7, 0);
+    }
+}
+
+/* Video Container */
+
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background: hsl(234 10% 20% / 60%);
+    z-index: 400;
+}
+
+.video-container.show-video {
+    display: flex;
+}
+
+.video-box {
+    position: relative;
+    width: 82%;
+}
+
+.video-box #myvideo {
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+
+.close-video {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 40px;
+    color: var(--main-color);
+}
+
+/* About Movie */
+
+.about-movie {
+    margin-top: 2rem;
+}
+
+.about-movie h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--main-color);
+}
+
+.about-movie p {
+    max-width: 600px;
+    font-size: 0.938rem;
+    margin: 10px 0;
+}
+
+/* Cast */
+
+.cast-heading {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--main-color);
+}
+
+.cast {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 150px));
+    gap: 1rem;
+}
+
+.cast-img {
+    width: 150px;
+    height: 180px;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Download */
+
+.download {
+    max-width: 800px;
+    width: 1005;
+    margin: auto;
+    display: grid;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.download-title {
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin: 1.6rem 0;
+    color: var(--main-color);
+}
+
+.download-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 2rem;
+}
+
+.download-links a {
+    text-align: center;
+    background: var(--main-color);
+    padding: 12px 24px;
+    color: var(--body-color);
+    letter-spacing: 1px;
+    font-weight: 500;
+    border-radius: 2px;
+}
+
+.download-links a:hover {
+    background: var(--hover-color);
+    transition: 0.3s all linear;
+}
+
+/* Responsive */
+
+@media (max-width:1178px) {
+
+    .navbar {
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: auto;
+        transform: translateY(0);
+        flex-direction: row;
+        justify-content: space-between;
+        row-gap: 1px;
+        padding: 10px;
+        margin-left: 15px;
+        margin-right: 15px;
+        border-top: 1px solid hsl(200 100% 99% / 5%);
+        background: linear-gradient(8deg,
+                hsl(240 17% 14% / 100%) 5%,
+                hsl(240 17% 14% / 100%) 100%);
+    }
+
+    .nav-link .bx {
+        font-size: 1.5rem;
+    }
+
+    .copyright {
+        margin-bottom: 4rem;
+    }
+}
+
+@media (max-width:1060px) {
+    .container {
+        margin: 0 auto;
+        width: 95%;
+    }
+
+    .heading {
+        width: 972px;
+        margin-left: 0px;
+    }
+
+    .cast {
+        gap: 0.9rem;
+    }
+
+    .cast-img {
+        width: 150px;
+        height: 180px;
+    }
+
+    .download-links a {
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width:991px) {
+    .container {
+        margin: 0 auto;
+        width: 90%;
+    }
+
+    .heading {
+        width: 891px;
+    }
+
+    .navbar {
+        width: 910px;
+        height: 50px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .nav-link .bx {
+        font-size: 1rem;
+    }
+
+    .nav-link-tittle {
+        font-size: 0.7rem;
+    }
+    .next-btn {
+        padding: 10px 15px;
+    }
+
+    .cast {
+        gap: 0rem;
+        grid-template-columns: repeat(auto-fit, minmax(148px, 148px));
+    }
+
+    .cast-img {
+        width: 150px;
+        height: 170px;
+    }
+
+    .download-links a {
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width:868px){
+    .heading {
+        width: 781px;
+    }
+    .navbar {
+        width: 785px;
+    }
+    .cast {
+        gap: 0.5rem;
+    }
+
+    .cast-img {
+        width: 140px;
+        height: 160px;
+    }
+}
+
+@media (max-width:769px){
+    .container {
+        margin: 0 auto;
+        width: 95%;
+    }
+    .home-img {
+        object-position: left;
+    }
+    .heading {
+        width: 729px;
+    }
+    .navbar {
+        width: 729px;
+    }
+
+    .cast {
+        gap: 0.5rem;
+    }
+
+}
+
+@media (max-width:668px){
+    .heading {
+        width: 634px;
+    }
+    .navbar {
+        width: 634px;
+    }
+}
+
+@media (max-width:568px){
+    .heading {
+        width: 539px;
+    }
+    .navbar {
+        width: 540px;
+    }
+}
+
+@media (max-width:468px){
+    .heading {
+        width: 444px;
+    }
+    .navbar {
+        width: 444px;
+    }
+}
+
+@media (max-width:430px){
+    .home {
+        min-height: 380px;
+    }
+    .logo {
+        font-size: 1rem;
+    }
+    .search-box {
+        max-width: 180px;
+        height: 2rem;
+    }
+    .nav {
+        padding: 5px 0;
+    }
+
+    .navbar {
+        width: 403px;
+    }
+    .heading {
+        width: 403px;
+    }
+    .movie-box {
+        height: 300px;
+    }
+    .movies-content {
+        height: 300px;
+    }
+    .next-btn {
+        padding: 6px 6px;
+    }
+    .copyright {
+        font-size: 0.9rem;
+    }
+    .movie-tittle{
+        font-size: 1rem;
+        color: #b7b7b7;
+    }
+
+    .play-movie {
+    bottom: 2.8px;
+    left: 40px;
+    }
+    .cast-img {
+        width: 120px;
+        height: 140px;
+    }
+    .cast {
+        gap: 0.895rem;
+        grid-template-columns: repeat(auto-fit, minmax(125px, 125px));
+    }
+    .cast-tittle {
+        font-size: 0.8rem;
+    }
+    .download-links a {
+        padding: 6px 6px;
+    }
+}
+
+@media (max-width:378px){
+    .search-box {
+        max-width: 130px;
+    }
+    .home {
+        min-height: 350px;
+    }
+    .home-tittle {
+        font-size: 1.6rem;
+    }
+    .home-text p {
+        font-size: 0.838rem;
+    }
+    .watch-btn span {
+        font-size: 0.956rem;
+    }
+    .watch-btn .bx {
+        font-size: 16px;
+        width: 30px;
+        height: 30px;
+    }
+    .heading {
+        width: 356px;
+    }
+    .navbar {
+        width: 356px;
+    }
+    .cast {
+        gap: 1rem;
+        margin-left: 3rem;
+    }
+    .copyright {
+        margin-bottom: 2.5rem;
+    }
+}
+
+@media (max-width:328px){
+    .heading {
+        width: 304px;
+        height: 2.4rem;
+    }
+    .heading-title {
+        font-size: 1rem;
+    }
+    .navbar {
+        width: 304px;
+    }
+    .nav-link .bx {
+        font-size: 0.837rem;
+    }
+    .nav-link-tittle {
+        font-size: 0.587rem;
+    }
+    .search-box {
+        max-width: 95px;
+        column-gap: 0.2rem;
+    }
+    .search-box .bx {
+        font-size: 0.837rem;
+    }
+    .user-img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center;
+    }
+    .home {
+        min-height: 300px;
+    }
+    .next-btn {
+        padding: 4px 4px;
+    }
+    .cast {
+        margin-left: 1.3rem;
+    }
+    .download-links a {
+        padding: 4px 4px;
+    }
+    .download-title {
+        font-size: 1.2rem;
+    }  
+}
+
+/* ImageWithText.css */
+
+.image-container {
+    position: relative;
+    width: 100%;
+  }
+
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white; /* Màu chữ */
+    font-size: 24px; /* Kích thước chữ */
+    font-weight: bold; /* Độ đậm của chữ */
+    background-color: rgba(0, 0, 0, 0.5); /* Màu nền với độ trong suốt */
+    padding: 10px; /* Padding để tạo khoảng cách xung quanh văn bản */
+  }
+
+/* ImageSwiper.css */
+
+.image-swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+.swiper-slide {
+    position: relative;
+  }
+
+.image-container {
+    position: relative;
+  }
+
+.image-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white; /* Màu chữ */
+    font-size: 24px; /* Kích thước chữ */
+    font-weight: bold; /* Độ đậm của chữ */
+    background-color: rgba(0, 0, 0, 0.5); /* Màu nền với độ trong suốt */
+    padding: 10px; /* Padding để tạo khoảng cách xung quanh văn bản */
+  }
+
+/* ImageSwiper.css */
+
+.image-swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+.swiper-slide {
+    position: relative;
+    overflow: hidden; /* Ẩn overflow để hiệu ứng nổi không vượt quá khung hình */
+  }
+
+.image-container {
+    position: relative;
+    overflow: hidden; /* Để che phủ hiệu ứng nổi */
+  }
+
+.image-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white; /* Màu chữ */
+    font-size: 24px; /* Kích thước chữ */
+    font-weight: bold; /* Độ đậm của chữ */
+    background-color: rgba(0, 0, 0, 0.5); /* Màu nền với độ trong suốt */
+    padding: 10px; /* Padding để tạo khoảng cách xung quanh văn bản */
+    opacity: 0; /* Mặc định là ẩn */
+    transition: opacity 0.3s ease; /* Hiệu ứng chuyển đổi opacity trong 0.3 giây */
+  }
+
+.swiper-slide:hover .image-overlay {
+    opacity: 1; /* Khi hover, hiển thị nền và chữ */
+  }
+  </style><style type="text/css" data-vite-dev-id="/Users/user/bao tram/MovieApp/vite-project/src/Swiper/Swiper.css">/* YourSwiperStyles.css */
+.swiper-slide img {
+    width: 100%; /* Đảm bảo hình ảnh chiếm toàn bộ kích thước của slide */
+    height: auto;
+    transition: transform 0.3s ease; /* Hiệu ứng chuyển động */
+  }
+  
+  .swiper-slide:hover img {
+    transform: scale(1.3); /* Hiệu ứng phóng to khi hover */
+  }</style><style type="text/css" data-vite-dev-id="/Users/user/bao tram/MovieApp/vite-project/node_modules/swiper/swiper.css">/**
+ * Swiper 11.0.5
+ * Most modern mobile touch slider and framework with hardware accelerated transitions
+ * https://swiperjs.com
+ *
+ * Copyright 2014-2023 Vladimir Kharlampidi
+ *
+ * Released under the MIT License
+ *
+ * Released on: November 22, 2023
+ */
+
+/* FONT_START */
+@font-face {
+  font-family: 'swiper-icons';
+  src: url('data:application/font-woff;charset=utf-8;base64, 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');
+  font-weight: 400;
+  font-style: normal;
+}
+/* FONT_END */
+:root {
+  --swiper-theme-color: #007aff;
+  /*
+  --swiper-preloader-color: var(--swiper-theme-color);
+  --swiper-wrapper-transition-timing-function: initial;
+  */
+}
+:host {
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 1;
+}
+.swiper {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  /* Fix of Webkit flickering */
+  z-index: 1;
+  display: block;
+}
+.swiper-vertical > .swiper-wrapper {
+  flex-direction: column;
+}
+.swiper-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  transition-property: transform;
+  transition-timing-function: var(--swiper-wrapper-transition-timing-function, initial);
+  box-sizing: content-box;
+}
+.swiper-android .swiper-slide,
+.swiper-ios .swiper-slide,
+.swiper-wrapper {
+  transform: translate3d(0px, 0, 0);
+}
+.swiper-horizontal {
+  touch-action: pan-y;
+}
+.swiper-vertical {
+  touch-action: pan-x;
+}
+.swiper-slide {
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition-property: transform;
+  display: block;
+}
+.swiper-slide-invisible-blank {
+  visibility: hidden;
+}
+/* Auto Height */
+.swiper-autoheight,
+.swiper-autoheight .swiper-slide {
+  height: auto;
+}
+.swiper-autoheight .swiper-wrapper {
+  align-items: flex-start;
+  transition-property: transform, height;
+}
+.swiper-backface-hidden .swiper-slide {
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+/* 3D Effects */
+.swiper-3d.swiper-css-mode .swiper-wrapper {
+  perspective: 1200px;
+}
+.swiper-3d .swiper-wrapper {
+  transform-style: preserve-3d;
+}
+.swiper-3d {
+  perspective: 1200px;
+}
+.swiper-3d .swiper-slide,
+.swiper-3d .swiper-cube-shadow {
+  transform-style: preserve-3d;
+}
+/* CSS Mode */
+.swiper-css-mode > .swiper-wrapper {
+  overflow: auto;
+  scrollbar-width: none;
+  /* For Firefox */
+  -ms-overflow-style: none;
+  /* For Internet Explorer and Edge */
+}
+.swiper-css-mode > .swiper-wrapper::-webkit-scrollbar {
+  display: none;
+}
+.swiper-css-mode > .swiper-wrapper > .swiper-slide {
+  scroll-snap-align: start start;
+}
+.swiper-css-mode.swiper-horizontal > .swiper-wrapper {
+  scroll-snap-type: x mandatory;
+}
+.swiper-css-mode.swiper-vertical > .swiper-wrapper {
+  scroll-snap-type: y mandatory;
+}
+.swiper-css-mode.swiper-free-mode > .swiper-wrapper {
+  scroll-snap-type: none;
+}
+.swiper-css-mode.swiper-free-mode > .swiper-wrapper > .swiper-slide {
+  scroll-snap-align: none;
+}
+.swiper-css-mode.swiper-centered > .swiper-wrapper::before {
+  content: '';
+  flex-shrink: 0;
+  order: 9999;
+}
+.swiper-css-mode.swiper-centered > .swiper-wrapper > .swiper-slide {
+  scroll-snap-align: center center;
+  scroll-snap-stop: always;
+}
+.swiper-css-mode.swiper-centered.swiper-horizontal > .swiper-wrapper > .swiper-slide:first-child {
+  margin-inline-start: var(--swiper-centered-offset-before);
+}
+.swiper-css-mode.swiper-centered.swiper-horizontal > .swiper-wrapper::before {
+  height: 100%;
+  min-height: 1px;
+  width: var(--swiper-centered-offset-after);
+}
+.swiper-css-mode.swiper-centered.swiper-vertical > .swiper-wrapper > .swiper-slide:first-child {
+  margin-block-start: var(--swiper-centered-offset-before);
+}
+.swiper-css-mode.swiper-centered.swiper-vertical > .swiper-wrapper::before {
+  width: 100%;
+  min-width: 1px;
+  height: var(--swiper-centered-offset-after);
+}
+/* Slide styles start */
+/* 3D Shadows */
+.swiper-3d .swiper-slide-shadow,
+.swiper-3d .swiper-slide-shadow-left,
+.swiper-3d .swiper-slide-shadow-right,
+.swiper-3d .swiper-slide-shadow-top,
+.swiper-3d .swiper-slide-shadow-bottom,
+.swiper-3d .swiper-slide-shadow,
+.swiper-3d .swiper-slide-shadow-left,
+.swiper-3d .swiper-slide-shadow-right,
+.swiper-3d .swiper-slide-shadow-top,
+.swiper-3d .swiper-slide-shadow-bottom {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+.swiper-3d .swiper-slide-shadow {
+  background: rgba(0, 0, 0, 0.15);
+}
+.swiper-3d .swiper-slide-shadow-left {
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+}
+.swiper-3d .swiper-slide-shadow-right {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+}
+.swiper-3d .swiper-slide-shadow-top {
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+}
+.swiper-3d .swiper-slide-shadow-bottom {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+}
+.swiper-lazy-preloader {
+  width: 42px;
+  height: 42px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -21px;
+  margin-top: -21px;
+  z-index: 10;
+  transform-origin: 50%;
+  box-sizing: border-box;
+  border: 4px solid var(--swiper-preloader-color, var(--swiper-theme-color));
+  border-radius: 50%;
+  border-top-color: transparent;
+}
+.swiper:not(.swiper-watch-progress) .swiper-lazy-preloader,
+.swiper-watch-progress .swiper-slide-visible .swiper-lazy-preloader {
+  animation: swiper-preloader-spin 1s infinite linear;
+}
+.swiper-lazy-preloader-white {
+  --swiper-preloader-color: #fff;
+}
+.swiper-lazy-preloader-black {
+  --swiper-preloader-color: #000;
+}
+@keyframes swiper-preloader-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* Slide styles end */
+</style><style type="text/css" data-vite-dev-id="/Users/user/bao tram/MovieApp/vite-project/node_modules/swiper/modules/navigation.css">:root {
+  --swiper-navigation-size: 44px;
+  /*
+  --swiper-navigation-top-offset: 50%;
+  --swiper-navigation-sides-offset: 10px;
+  --swiper-navigation-color: var(--swiper-theme-color);
+  */
+}
+.swiper-button-prev,
+.swiper-button-next {
+  position: absolute;
+  top: var(--swiper-navigation-top-offset, 50%);
+  width: calc(var(--swiper-navigation-size) / 44 * 27);
+  height: var(--swiper-navigation-size);
+  margin-top: calc(0px - (var(--swiper-navigation-size) / 2));
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--swiper-navigation-color, var(--swiper-theme-color));
+}
+.swiper-button-prev.swiper-button-disabled,
+.swiper-button-next.swiper-button-disabled {
+  opacity: 0.35;
+  cursor: auto;
+  pointer-events: none;
+}
+.swiper-button-prev.swiper-button-hidden,
+.swiper-button-next.swiper-button-hidden {
+  opacity: 0;
+  cursor: auto;
+  pointer-events: none;
+}
+.swiper-navigation-disabled .swiper-button-prev,
+.swiper-navigation-disabled .swiper-button-next {
+  display: none !important;
+}
+.swiper-button-prev svg,
+.swiper-button-next svg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform-origin: center;
+}
+.swiper-rtl .swiper-button-prev svg,
+.swiper-rtl .swiper-button-next svg {
+  transform: rotate(180deg);
+}
+.swiper-button-prev,
+.swiper-rtl .swiper-button-next {
+  left: var(--swiper-navigation-sides-offset, 10px);
+  right: auto;
+}
+.swiper-button-next,
+.swiper-rtl .swiper-button-prev {
+  right: var(--swiper-navigation-sides-offset, 10px);
+  left: auto;
+}
+.swiper-button-lock {
+  display: none;
+}
+/* Navigation font start */
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  font-family: swiper-icons;
+  font-size: var(--swiper-navigation-size);
+  text-transform: none !important;
+  letter-spacing: 0;
+  font-variant: initial;
+  line-height: 1;
+}
+.swiper-button-prev:after,
+.swiper-rtl .swiper-button-next:after {
+  content: 'prev';
+}
+.swiper-button-next,
+.swiper-rtl .swiper-button-prev {
+  right: var(--swiper-navigation-sides-offset, 10px);
+  left: auto;
+}
+.swiper-button-next:after,
+.swiper-rtl .swiper-button-prev:after {
+  content: 'next';
+}
+/* Navigation font end */
+</style><style type="text/css" data-vite-dev-id="/Users/user/bao tram/MovieApp/vite-project/node_modules/swiper/modules/pagination.css">:root {
+  /*
+  --swiper-pagination-color: var(--swiper-theme-color);
+  --swiper-pagination-left: auto;
+  --swiper-pagination-right: 8px;
+  --swiper-pagination-bottom: 8px;
+  --swiper-pagination-top: auto;
+  --swiper-pagination-fraction-color: inherit;
+  --swiper-pagination-progressbar-bg-color: rgba(0,0,0,0.25);
+  --swiper-pagination-progressbar-size: 4px;
+  --swiper-pagination-bullet-size: 8px;
+  --swiper-pagination-bullet-width: 8px;
+  --swiper-pagination-bullet-height: 8px;
+  --swiper-pagination-bullet-border-radius: 50%;
+  --swiper-pagination-bullet-inactive-color: #000;
+  --swiper-pagination-bullet-inactive-opacity: 0.2;
+  --swiper-pagination-bullet-opacity: 1;
+  --swiper-pagination-bullet-horizontal-gap: 4px;
+  --swiper-pagination-bullet-vertical-gap: 6px;
+  */
+}
+.swiper-pagination {
+  position: absolute;
+  text-align: center;
+  transition: 300ms opacity;
+  transform: translate3d(0, 0, 0);
+  z-index: 10;
+}
+.swiper-pagination.swiper-pagination-hidden {
+  opacity: 0;
+}
+.swiper-pagination-disabled > .swiper-pagination,
+.swiper-pagination.swiper-pagination-disabled {
+  display: none !important;
+}
+/* Common Styles */
+.swiper-pagination-fraction,
+.swiper-pagination-custom,
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: var(--swiper-pagination-bottom, 8px);
+  top: var(--swiper-pagination-top, auto);
+  left: 0;
+  width: 100%;
+}
+/* Bullets */
+.swiper-pagination-bullets-dynamic {
+  overflow: hidden;
+  font-size: 0;
+}
+.swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
+  transform: scale(0.33);
+  position: relative;
+}
+.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active {
+  transform: scale(1);
+}
+.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-main {
+  transform: scale(1);
+}
+.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-prev {
+  transform: scale(0.66);
+}
+.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-prev-prev {
+  transform: scale(0.33);
+}
+.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-next {
+  transform: scale(0.66);
+}
+.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-next-next {
+  transform: scale(0.33);
+}
+.swiper-pagination-bullet {
+  width: var(--swiper-pagination-bullet-width, var(--swiper-pagination-bullet-size, 8px));
+  height: var(--swiper-pagination-bullet-height, var(--swiper-pagination-bullet-size, 8px));
+  display: inline-block;
+  border-radius: var(--swiper-pagination-bullet-border-radius, 50%);
+  background: var(--swiper-pagination-bullet-inactive-color, #000);
+  opacity: var(--swiper-pagination-bullet-inactive-opacity, 0.2);
+}
+button.swiper-pagination-bullet {
+  border: none;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  -webkit-appearance: none;
+          appearance: none;
+}
+.swiper-pagination-clickable .swiper-pagination-bullet {
+  cursor: pointer;
+}
+.swiper-pagination-bullet:only-child {
+  display: none !important;
+}
+.swiper-pagination-bullet-active {
+  opacity: var(--swiper-pagination-bullet-opacity, 1);
+  background: var(--swiper-pagination-color, var(--swiper-theme-color));
+}
+.swiper-vertical > .swiper-pagination-bullets,
+.swiper-pagination-vertical.swiper-pagination-bullets {
+  right: var(--swiper-pagination-right, 8px);
+  left: var(--swiper-pagination-left, auto);
+  top: 50%;
+  transform: translate3d(0px, -50%, 0);
+}
+.swiper-vertical > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-vertical.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: var(--swiper-pagination-bullet-vertical-gap, 6px) 0;
+  display: block;
+}
+.swiper-vertical > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic,
+.swiper-pagination-vertical.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+}
+.swiper-vertical > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet,
+.swiper-pagination-vertical.swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
+  display: inline-block;
+  transition: 200ms transform,
+        200ms top;
+}
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 4px);
+}
+.swiper-horizontal > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic,
+.swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+.swiper-horizontal > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
+  transition: 200ms transform,
+        200ms left;
+}
+.swiper-horizontal.swiper-rtl > .swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
+  transition: 200ms transform,
+    200ms right;
+}
+/* Fraction */
+.swiper-pagination-fraction {
+  color: var(--swiper-pagination-fraction-color, inherit);
+}
+/* Progress */
+.swiper-pagination-progressbar {
+  background: var(--swiper-pagination-progressbar-bg-color, rgba(0, 0, 0, 0.25));
+  position: absolute;
+}
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+  background: var(--swiper-pagination-color, var(--swiper-theme-color));
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(0);
+  transform-origin: left top;
+}
+.swiper-rtl .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+  transform-origin: right top;
+}
+.swiper-horizontal > .swiper-pagination-progressbar,
+.swiper-pagination-progressbar.swiper-pagination-horizontal,
+.swiper-vertical > .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite,
+.swiper-pagination-progressbar.swiper-pagination-vertical.swiper-pagination-progressbar-opposite {
+  width: 100%;
+  height: var(--swiper-pagination-progressbar-size, 4px);
+  left: 0;
+  top: 0;
+}
+.swiper-vertical > .swiper-pagination-progressbar,
+.swiper-pagination-progressbar.swiper-pagination-vertical,
+.swiper-horizontal > .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite,
+.swiper-pagination-progressbar.swiper-pagination-horizontal.swiper-pagination-progressbar-opposite {
+  width: var(--swiper-pagination-progressbar-size, 4px);
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+.swiper-pagination-lock {
+  display: none;
+}
+</style><style type="text/css" data-vite-dev-id="/Users/user/bao tram/MovieApp/vite-project/node_modules/swiper/modules/scrollbar.css">:root {
+  /*
+  --swiper-scrollbar-border-radius: 10px;
+  --swiper-scrollbar-top: auto;
+  --swiper-scrollbar-bottom: 4px;
+  --swiper-scrollbar-left: auto;
+  --swiper-scrollbar-right: 4px;
+  --swiper-scrollbar-sides-offset: 1%;
+  --swiper-scrollbar-bg-color: rgba(0, 0, 0, 0.1);
+  --swiper-scrollbar-drag-bg-color: rgba(0, 0, 0, 0.5);
+  --swiper-scrollbar-size: 4px;
+  */
+}
+.swiper-scrollbar {
+  border-radius: var(--swiper-scrollbar-border-radius, 10px);
+  position: relative;
+  touch-action: none;
+  background: var(--swiper-scrollbar-bg-color, rgba(0, 0, 0, 0.1));
+}
+.swiper-scrollbar-disabled > .swiper-scrollbar,
+.swiper-scrollbar.swiper-scrollbar-disabled {
+  display: none !important;
+}
+.swiper-horizontal > .swiper-scrollbar,
+.swiper-scrollbar.swiper-scrollbar-horizontal {
+  position: absolute;
+  left: var(--swiper-scrollbar-sides-offset, 1%);
+  bottom: var(--swiper-scrollbar-bottom, 4px);
+  top: var(--swiper-scrollbar-top, auto);
+  z-index: 50;
+  height: var(--swiper-scrollbar-size, 4px);
+  width: calc(100% - 2 * var(--swiper-scrollbar-sides-offset, 1%));
+}
+.swiper-vertical > .swiper-scrollbar,
+.swiper-scrollbar.swiper-scrollbar-vertical {
+  position: absolute;
+  left: var(--swiper-scrollbar-left, auto);
+  right: var(--swiper-scrollbar-right, 4px);
+  top: var(--swiper-scrollbar-sides-offset, 1%);
+  z-index: 50;
+  width: var(--swiper-scrollbar-size, 4px);
+  height: calc(100% - 2 * var(--swiper-scrollbar-sides-offset, 1%));
+}
+.swiper-scrollbar-drag {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background: var(--swiper-scrollbar-drag-bg-color, rgba(0, 0, 0, 0.5));
+  border-radius: var(--swiper-scrollbar-border-radius, 10px);
+  left: 0;
+  top: 0;
+}
+.swiper-scrollbar-cursor-drag {
+  cursor: move;
+}
+.swiper-scrollbar-lock {
+  display: none;
+}
+</style><style type="text/css" data-vite-dev-id="/Users/user/bao tram/MovieApp/vite-project/src/index.css">@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+    h1{
+        Color: blue;
+        font-size: medium;
+    }
+    input{
+        @apply border border-slate-600 rounded py-2 px-4;
+    }
+}
+
+@layer components{
+    button, 
+    input [type="button"],
+    .btn{
+        @apply bg-white border border-slate-300 py-2 px-4 rounded text-slate-700;
+    }
+    .btn-primary{
+        @apply bg-indigo-700 border-indigo-700 text-white;
+    }
+    .avatar {
+        vertical-align: middle;
+        width: 160x;
+        height: 160px;
+        border-radius: 90%;
+      }
+      .li{
+        list-style-type: armenian;
+      }
+    }
+
+@layer utilities{
+    .pdy-2 {
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+    }
+
+
+}</style></head>
+  <body>
+    <div id="root"><div class="container mx-auto"><header><div class="nav container"><div class="logo">MOVIE<span>VENNIE</span></div><div class="search-box"><input type="search-box" name="" id="search-input" placeholder="Search Movie"></div><a href="http://localhost:5173/#" class="user"><img src="./Vite + React + TS_files/user.png" alt="" class="user-img"></a></div><div class="navbar"><nav><ul><li class="nav-link"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"></path></svg><a href="http://localhost:5173/">Home</a></li><br><li class="nav-link"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 384 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M216 23.86c0-23.8-30.65-32.77-44.15-13.04C48 191.85 224 200 224 288c0 35.63-29.11 64.46-64.85 63.99-35.17-.45-63.15-29.77-63.15-64.94v-85.51c0-21.7-26.47-32.23-41.43-16.5C27.8 213.16 0 261.33 0 320c0 105.87 86.13 192 192 192s192-86.13 192-192c0-170.29-168-193-168-296.14z"></path></svg><a href="http://localhost:5173/trending">Trending</a></li><br><li class="nav-link"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 496 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M225.38 233.37c-12.5 12.5-12.5 32.76 0 45.25 12.49 12.5 32.76 12.5 45.25 0 12.5-12.5 12.5-32.76 0-45.25-12.5-12.49-32.76-12.49-45.25 0zM248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm126.14 148.05L308.17 300.4a31.938 31.938 0 0 1-15.77 15.77l-144.34 65.97c-16.65 7.61-33.81-9.55-26.2-26.2l65.98-144.35a31.938 31.938 0 0 1 15.77-15.77l144.34-65.97c16.65-7.6 33.8 9.55 26.19 26.2z"></path></svg><a href="http://localhost:5173/Explore">Explore</a></li><br><li class="nav-link"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M336.2 64H47.8C21.4 64 0 85.4 0 111.8v288.4C0 426.6 21.4 448 47.8 448h288.4c26.4 0 47.8-21.4 47.8-47.8V111.8c0-26.4-21.4-47.8-47.8-47.8zm189.4 37.7L416 177.3v157.4l109.6 75.5c21.2 14.6 50.4-.3 50.4-25.8V127.5c0-25.4-29.1-40.4-50.4-25.8z"></path></svg><a href="http://localhost:5173/movie">Movies</a></li><br><li class="nav-link"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"></path></svg><a href="http://localhost:5173/favorite">Favorite</a></li></ul></nav></div></header><main><div class="container m-auto"><section class="home container" id="home"><img src="./Vite + React + TS_files/home-background.png" alt="" class="home-img"><div class="home-text"><h1 class="home-tittle">Hitman's Wife's <br>Bodyguard</h1><p>Releasing 23 july</p><a href="http://localhost:5173/#" class="watch-btn"><i class="bx bx-right-arrow"></i><span>Watch the trailler</span></a></div></section> <br><br><div class="movies-container container" id="movies"><div class="heading"><h2 class="heading-title">Popular Movies</h2></div><div class="swiper swiper-initialized swiper-horizontal swiper-backface-hidden image-swiper"><div class="swiper-wrapper"><div class="swiper-slide popular-content swiper swiper-wrapper movie-box swiper-slide-active" style="width: 238.75px; margin-right: 35px;"><img src="./Vite + React + TS_files/popular-movie-1.jpg" alt="" class="movie-box-img"><div class="box-text"><h1 class="movie-tittle">SPIDER-MAN: NO WAY HOME</h1><span class="movie-type">action</span><a href="http://localhost:5173/#" class="watch-btn play-btn "><i class="bx bx-right-arrow"></i></a></div></div><div class="swiper-slide popular-content swiper swiper-wrapper movie-box swiper-slide-next" style="width: 238.75px; margin-right: 35px;"><img src="./Vite + React + TS_files/popular-movie-2.jpg" alt="" class="movie-box-img"><div class="box-text"><h1 class="movie-tittle">JUNGLE CRUISE</h1><span class="movie-type">action</span><a href="http://localhost:5173/#" class="watch-btn play-btn "><i class="bx bx-right-arrow"></i></a></div></div><div class="swiper-slide popular-content swiper swiper-wrapper movie-box" style="width: 238.75px; margin-right: 35px;"><img src="./Vite + React + TS_files/popular-movie-3.jpg" alt="" class="movie-box-img"><div class="box-text"><h1 class="movie-tittle">LOKI</h1><span class="movie-type">action</span><a href="http://localhost:5173/#" class="watch-btn play-btn "><i class="bx bx-right-arrow"></i></a></div></div><div class="swiper-slide popular-content swiper swiper-wrapper movie-box" style="width: 238.75px; margin-right: 35px;"><img src="./Vite + React + TS_files/popular-movie-4.jpg" alt="" class="movie-box-img"><div class="box-text"><h1 class="movie-tittle">SQUID GAME</h1><span class="movie-type">action</span><a href="http://localhost:5173/#" class="watch-btn play-btn "><i class="bx bx-right-arrow"></i></a></div></div><div class="swiper-slide popular-content swiper swiper-wrapper movie-box" style="width: 238.75px; margin-right: 35px;"><img src="./Vite + React + TS_files/popular-movie-5.jpg" alt="" class="movie-box-img"><div class="box-text"><h1 class="movie-tittle">THE FALCON AND THE WINTER SOLDIER</h1><span class="movie-type">action</span><a href="http://localhost:5173/#" class="watch-btn play-btn "><i class="bx bx-right-arrow"></i></a></div></div><div class="swiper-slide popular-content swiper swiper-wrapper movie-box" style="width: 238.75px; margin-right: 35px;"><img src="./Vite + React + TS_files/popular-movie-6.jpg" alt="" class="movie-box-img"><div class="box-text"><h1 class="movie-tittle">HAWKEYE</h1><span class="movie-type">action</span><a href="http://localhost:5173/#" class="watch-btn play-btn "><i class="bx bx-right-arrow"></i></a></div></div><div class="swiper-slide popular-content swiper swiper-wrapper movie-box" style="width: 238.75px; margin-right: 35px;"><img src="./Vite + React + TS_files/popular-movie-7.jpg" alt="" class="movie-box-img"><div class="box-text"><h1 class="movie-tittle">AGENTS of S.H.I.E.L.D.</h1><span class="movie-type">action</span><a href="http://localhost:5173/#" class="watch-btn play-btn "><i class="bx bx-right-arrow"></i></a></div></div><div class="swiper-slide popular-content swiper swiper-wrapper movie-box" style="width: 238.75px; margin-right: 35px;"><img src="./Vite + React + TS_files/popular-movie-8.jpg" alt="" class="movie-box-img"><div class="box-text"><h1 class="movie-tittle">THE FLASH</h1><span class="movie-type">action</span><a href="http://localhost:5173/#" class="watch-btn play-btn "><i class="bx bx-right-arrow"></i></a></div></div></div><div class="swiper-button-prev swiper-button-disabled"></div><div class="swiper-button-next"></div><div class="swiper-scrollbar"></div><div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"><span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span></div></div></div><br><div class="movies-container container" id="movies"><div class="heading"><h2 class="heading-title">Movies and Shows</h2></div><div class="swiper swiper-initialized swiper-horizontal swiper-backface-hidden image-swiper"><div class="swiper-wrapper"><div class="swiper-slide popular-content swiper swiper-wrapper movie-box swiper-slide-active" style="width: 235px; margin-right: 40px;"><img src="./Vite + React + TS_files/movie-1.jpg" alt="" class="movie-box-img"><div class="box-text"><h1 class="movie-tittle">JUMANJI WELCOME TO THE JUNGLE</h1><span class="movie-type">action</span><a href="http://localhost:5173/#" class="watch-btn play-btn "><i class="bx bx-right-arrow"></i></a></div></div><div class="swiper-slide popular-content swiper swiper-wrapper movie-box swiper-slide-next" style="width: 235px; margin-right: 40px;"><img src="./Vite + React + TS_files/movie-4.jpg" alt="" class="movie-box-img"><div class="box-text"><h1 class="movie-tittle">ENTERNALS</h1><span class="movie-type">action</span><a href="http://localhost:5173/#" class="watch-btn play-btn "><i class="bx bx-right-arrow"></i></a></div></div><div class="swiper-slide popular-content swiper swiper-wrapper movie-box" style="width: 235px; margin-right: 40px;"><img src="./Vite + React + TS_files/movie-5.jpg" alt="" class="movie-box-img"><div class="box-text"><h1 class="movie-tittle">007 SPECTRE</h1><span class="movie-type">action</span><a href="http://localhost:5173/#" class="watch-btn play-btn "><i class="bx bx-right-arrow"></i></a></div></div><div class="swiper-slide popular-content swiper swiper-wrapper movie-box" style="width: 235px; margin-right: 40px;"><img src="./Vite + React + TS_files/movie-6.jpg" alt="" class="movie-box-img"><div class="box-text"><h1 class="movie-tittle">MONEY HEIST</h1><span class="movie-type">action</span><a href="http://localhost:5173/#" class="watch-btn play-btn "><i class="bx bx-right-arrow"></i></a></div></div><div class="swiper-slide popular-content swiper swiper-wrapper movie-box" style="width: 235px; margin-right: 40px;"><img src="./Vite + React + TS_files/movie-7.jpg" alt="" class="movie-box-img"><div class="box-text"><h1 class="movie-tittle">THE WOLVERINE</h1><span class="movie-type">action</span><a href="http://localhost:5173/#" class="watch-btn play-btn "><i class="bx bx-right-arrow"></i></a></div></div><div class="swiper-slide popular-content swiper swiper-wrapper movie-box" style="width: 235px; margin-right: 40px;"><img src="./Vite + React + TS_files/movie-8.jpg" alt="" class="movie-box-img"><div class="box-text"><h1 class="movie-tittle">JOHNNY ENGLISH 3.0</h1><span class="movie-type">action</span><a href="http://localhost:5173/#" class="watch-btn play-btn "><i class="bx bx-right-arrow"></i></a></div></div><div class="swiper-slide popular-content swiper swiper-wrapper movie-box" style="width: 235px; margin-right: 40px;"><img src="./Vite + React + TS_files/movie-2.jpg" alt="" class="movie-box-img"><div class="box-text"><h1 class="movie-tittle">THE HITMAN'S BODYGUARD</h1><span class="movie-type">action</span><a href="http://localhost:5173/#" class="watch-btn play-btn "><i class="bx bx-right-arrow"></i></a></div></div><div class="swiper-slide popular-content swiper swiper-wrapper movie-box" style="width: 235px; margin-right: 40px;"><img src="./Vite + React + TS_files/movie-3.jpg" alt="" class="movie-box-img"><div class="box-text"><h1 class="movie-tittle">SHANG-CHI AND THE LEGEND OF THE TEN RINGS</h1><span class="movie-type">action</span><a href="http://localhost:5173/#" class="watch-btn play-btn "><i class="bx bx-right-arrow"></i></a></div></div></div><div class="swiper-button-prev swiper-button-disabled"></div><div class="swiper-button-next"></div><div class="swiper-scrollbar"></div><div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"><span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span></div></div></div></div></main><div class="next-page"><button class="next-btn">Next Page</button></div><div class="copyright"><p>© MovieVennie All Right Reserved</p></div></div></div>
+    <script type="module" src="./Vite + React + TS_files/main.tsx"></script>
+  
+
+</body></html>

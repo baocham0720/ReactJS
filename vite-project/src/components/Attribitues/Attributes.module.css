@@ -1,0 +1,15 @@
+.attr_container{
+    display: flex;
+    column-gap: 15px;
+    align-items: center;
+}
+.attr_item{
+    border: 1px solid #ddd;
+    padding:5px 8px;
+    color:#555;
+    cursor: pointer; 
+}
+.attr_item_actived{
+    border: 1px solid #212121;
+    color: #111;
+}

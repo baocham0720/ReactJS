@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+    h1{
+        Color: blue;
+        font-size: medium;
+    }
+    input{
+        @apply border border-slate-600 rounded py-2 px-4;
+    }
+}
+
+@layer components{
+    button, 
+    input [type="button"],
+    .btn{
+        @apply bg-white border border-slate-300 py-2 px-4 rounded text-slate-700;
+    }
+    .btn-primary{
+        @apply bg-indigo-700 border-indigo-700 text-white;
+    }
+    .avatar {
+        vertical-align: middle;
+        width: 160x;
+        height: 160px;
+        border-radius: 90%;
+      }
+      .li{
+        list-style-type: armenian;
+      }
+    }
+
+@layer utilities{
+    .pdy-2 {
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+    }
+
+
+}

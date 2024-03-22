@@ -1,0 +1,32 @@
+GET https://api.escuelajs.co/api/v1/products  HTTP/1.1
+
+### Dau ngan cat giua cac request
+
+POST https://api.escuelajs.co/api/v1/products HTTP/1.1
+content-type: application/json
+
+//{
+   // "name": "sample",
+   // "time": "Wed, 21 Oct 2015 18:27:50 GMT"
+//}
+
+{
+  "title": "New Product",
+  "price": 10,
+  "description": "A description",
+  "categoryId": 1,
+  "images": ["https://placeimg.com/640/480/any"]
+}
+
+### Xoa san pham
+DELETE https://api.escuelajs.co/api/v1/products/97
+//truyen id sau /
+
+### sua san pham
+PUT https://api.escuelajs.co/api/v1/products/1
+content-type: application/json
+
+{
+  "title": "Change title",
+  
+}
